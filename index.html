@@ -11,6 +11,7 @@
             justify-content: center;
             align-items: center;
             font-family: Arial, sans-serif;
+            overflow: hidden; /* Evita que haya scroll en la página */
         }
 
         body {
@@ -19,11 +20,12 @@
 
         .chat-container {
             width: 100%;
-            max-width: 500px; /* Limita el ancho máximo para que no sea demasiado grande en pantallas grandes */
-            height: 100%;
+            max-width: 500px; /* Limita el ancho máximo en pantallas grandes */
+            height: 100vh; /* Asegura que ocupe el 100% de la pantalla */
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             overflow: hidden;
+            display: flex;
         }
 
         iframe {
@@ -32,12 +34,12 @@
             height: 100%;
         }
 
-        /* Estilos para pantallas móviles */
+        /* Estilos específicos para pantallas móviles */
         @media (max-width: 768px) {
             .chat-container {
-                width: 100vw; /* Ocupa todo el ancho de la pantalla en móviles */
-                height: 100vh; /* Ocupa todo el alto de la pantalla en móviles */
-                border-radius: 0; /* Sin bordes redondeados para maximizar el espacio en móvil */
+                width: 100vw; /* Ocupa todo el ancho de la pantalla en móvil */
+                height: 100vh; /* Ocupa todo el alto de la pantalla en móvil */
+                border-radius: 0; /* Sin bordes redondeados para maximizar el espacio */
             }
         }
     </style>
@@ -48,4 +50,5 @@
     </div>
 </body>
 </html>
+
 
