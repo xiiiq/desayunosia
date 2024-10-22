@@ -3,52 +3,68 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* Configuración global para evitar scroll y asegurar que todo ocupe 100% de la pantalla */
         html, body {
-            height: 100%;
             margin: 0;
             padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Evita barras de desplazamiento */
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Contenedor del chat, centrado con aspecto moderno */
+        .chat-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: Arial, sans-serif;
-            overflow: hidden; /* Evita que haya scroll en la página */
-        }
-
-        body {
+            width: 100%;
+            height: 100%;
             background-color: #f0f0f0;
         }
 
-        .chat-container {
+        /* El chat que se ajusta al tamaño de pantalla */
+        .chat-box {
             width: 100%;
-            max-width: 500px; /* Limita el ancho máximo en pantallas grandes */
-            height: 100vh; /* Asegura que ocupe el 100% de la pantalla */
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            max-width: 600px; /* Limita el ancho máximo en pantallas grandes */
+            height: 100%;
+            max-height: 90vh; /* Limita la altura en pantallas grandes */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
             overflow: hidden;
             display: flex;
+            flex-direction: column;
+            background-color: white;
         }
 
         iframe {
+            flex-grow: 1; /* Hace que el iframe crezca para llenar el espacio */
             border: 0;
             width: 100%;
             height: 100%;
         }
 
-        /* Estilos específicos para pantallas móviles */
+        /* Estilo especial para pantallas móviles */
         @media (max-width: 768px) {
-            .chat-container {
-                width: 100vw; /* Ocupa todo el ancho de la pantalla en móvil */
-                height: 100vh; /* Ocupa todo el alto de la pantalla en móvil */
-                border-radius: 0; /* Sin bordes redondeados para maximizar el espacio */
+            .chat-box {
+                width: 100vw; /* Ocupa todo el ancho disponible */
+                height: 100vh; /* Ocupa todo el alto disponible */
+                max-width: 100vw; /* Sin límite de ancho en móviles */
+                max-height: 100vh; /* Sin límite de altura en móviles */
+                border-radius: 0; /* Quita los bordes redondeados en móvil */
             }
         }
     </style>
 </head>
 <body>
     <div class="chat-container">
-        <iframe src="https://copilotstudio.microsoft.com/environments/Default-2dd0dbd5-e196-426c-8379-d937445ceb05/bots/cr334_asistenteKuik/webchat?__version__=2" frameborder="0"></iframe>
+        <div class="chat-box">
+            <iframe src="https://copilotstudio.microsoft.com/environments/Default-2dd0dbd5-e196-426c-8379-d937445ceb05/bots/cr334_asistenteKuik/webchat?__version__=2" frameborder="0"></iframe>
+        </div>
     </div>
 </body>
 </html>
+
 
 
